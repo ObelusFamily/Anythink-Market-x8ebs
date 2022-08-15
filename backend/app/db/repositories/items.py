@@ -141,7 +141,7 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
             query_params.append(title)
             query_params_count += 1
 
-            query = query.from_(items).where(items.title == Parameter(query_params_count)).select(items)
+            query = query.from_(items).where(items.title.like(Parameter(query_params_count)).select(items))
 
         if tag:
             query_params.append(tag)
