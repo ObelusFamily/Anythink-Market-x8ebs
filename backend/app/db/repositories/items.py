@@ -166,7 +166,7 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
             query = query.join(
                 items,
             ).on(
-                (items.title == items.title) & (
+                (
                     items.title == Query.from_(
                         items,
                     ).where(
